@@ -38,21 +38,21 @@ with col2:
     st.markdown("""
     <p class="small-text" >
     Welcome to the Integrated Ecosystem Programme: Southern Benguela (IEP:SB) Analysis Dashboard.
-    The IEP:SB is a multi-disciplinary project designed to undertake relevant science in the 
+    The IEP:SB is a multi-disciplinary project designed to undertake oceanographic research in the 
     Southern Benguela region. The primary objective of the IEP:SB is to develop ecosystem indicators that can be used to effectively monitor and 
     understand the Southern Benguela. These indicators cover a wide range of ecosystem components, 
     including physical, chemical, planktonic, microbial, seabird, and benthic elements. 
-    The data and insights gained from this program are crucial for ecosystem-based management and conservation efforts.
-    It serves as a platform for collaboration and learning, bringing together scientists and researchers from various disciplines to study the complex interactions within this marine ecosystem.
+    The data and insights gained from this program are crucial for ecosystem-based management and conservation efforts in the Southern Benguela region.
+    It serves as a platform for collaboration and learning, bringing together students and researchers from various disciplines to study the complex interactions within this marine ecosystem.
     </p>
     """, unsafe_allow_html=True)
 
     st.markdown("""
     <p class="small-text">
     This dashboard allows you to explore and visualise the CTD data collected during IEP voyages. 
-    You can filter the data by grid, date range, and season, and visualize it through various types of plots, including profile plots, TS diagrams, and correlation heatmaps. 
+    You can filter the data by grid, date range, and season, and visualize it through various types of plots, including ctd profile, TS diagrams, and correlation heatmaps. 
     Each plot comes with a download option, enabling you to save the figures in different formats for further use offline.
-    The data used here is published online in South Africa's Marine Information Management System (MIMS). The link to MIMS is available on the resource section.
+    The data used here is published online in the South Africa's Marine Information Management System (MIMS). The link to the MIMS is catalogue available under the resource section.
     </p>
     """, unsafe_allow_html=True)
 
