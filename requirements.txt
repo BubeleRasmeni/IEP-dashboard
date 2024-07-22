@@ -24,6 +24,8 @@ numpy==2.0.0
 packaging==24.1
 pandas==2.2.2
 pillow==10.4.0
+openpyxl==3.0.9
+statsmodels==0.12.2
 plotly==5.22.0
 protobuf==5.27.2
 pyarrow==17.0.0
