@@ -50,3 +50,4 @@ watchdog==4.0.1
 xarray==2024.6.0
 openpyxl
 statsmodels
+kaleido
