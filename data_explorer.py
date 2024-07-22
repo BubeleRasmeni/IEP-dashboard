@@ -12,7 +12,7 @@ import statsmodels.api as sm
 #Functions
 
 ### Page layout
-st.title("Welcome to IEP Interactive Data Visualisation 🚢 🐋")
+st.title("Welcome to the IEP Interactive Dashboard 🚢 🐋")
 # Cache the data loading function
 @st.cache_data
 def load_data():
