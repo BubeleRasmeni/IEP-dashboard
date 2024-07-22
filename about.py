@@ -50,7 +50,7 @@ with col2:
     st.markdown("""
     <p class="small-text">
     This dashboard allows you to explore and visualise the CTD data collected during IEP voyages. 
-    You can filter the data by grid, date range, and season, and visualize it through various types of plots, including ctd profile, TS diagrams, and correlation heatmaps. 
+    You can filter the data by grid, date range, and season, and visualize it through various types of plots, including ctd profiles, TS diagrams, and correlation heatmaps. 
     Each plot comes with a download option, enabling you to save the figures in different formats for further use offline.
     The data used here is published online in the South Africa's Marine Information Management System (MIMS). The link to the MIMS is catalogue available under the resource section.
     </p>
