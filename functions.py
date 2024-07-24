@@ -60,7 +60,7 @@ def generate_correlation_heatmap(Correlation_station, data):
         text_auto=True,  # Automatically add text on each cell
         aspect="auto",
         color_continuous_scale="RdBu_r",  # Set color scale to blue-white-red
-        #template="simple_white"
+        template="simple_white"
     )
     fig.update_layout(
         title=f"Correlation Heatmap for {station}",
