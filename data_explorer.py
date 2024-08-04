@@ -169,7 +169,7 @@ elif analysis_option == 'TS Diagram':
                         y = TS_data['Temperature [ITS90,°C]']
                         X = sm.add_constant(X)  # Add a constant term for the intercept
                         model = sm.OLS(y, X).fit()
-                        X_pred = np.linspace(X['Temperature [ITS90,°C]'].min(), X['Temperature [ITS90,°C]'].max(), 100)
+                        X_pred = np.linspace(X['Salinity [psu]'].min(), X['Salinity [psu]'].max(), 100)
                         X_pred = sm.add_constant(X_pred)
                         y_pred = model.predict(X_pred)
                         
