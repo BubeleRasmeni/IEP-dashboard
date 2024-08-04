@@ -165,7 +165,7 @@ elif analysis_option == 'TS Diagram':
 
                     if add_regression == 'Yes':
                         # Perform linear regression
-                        x = TS_data['Salinity [psu]']
+                        X = TS_data['Salinity [psu]']
                         y = TS_data['Temperature [ITS90,°C]']
                         X = sm.add_constant(X)  # Add a constant term for the intercept
                         model = sm.OLS(y, X).fit()
