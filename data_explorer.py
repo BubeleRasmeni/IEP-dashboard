@@ -189,8 +189,8 @@ elif analysis_option == 'TS Diagram':
 
     fig_ts.update_layout(
         title='TS Diagram',
-        xaxis_title='Temperature [ITS90,°C]',
-        yaxis_title='Salinity [psu]',
+        yaxis_title='Temperature [ITS90,°C]',
+        xaxis_title='Salinity [psu]',
         legend_title='Station, Season, Year'
     )
 
