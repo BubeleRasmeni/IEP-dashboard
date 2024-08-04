@@ -156,8 +156,8 @@ elif analysis_option == 'TS Diagram':
                     group_name = f'{station} {season} {year}'
                     
                     fig_ts.add_trace(go.Scatter(
-                        x=TS_data['Temperature [ITS90,°C]'],
-                        y=TS_data['Salinity [psu]'],
+                        x=TS_data['Salinity [psu]'],
+                        y=TS_data['Temperature [ITS90,°C]'],
                         mode='markers',
                         name=group_name,
                         legendgroup=group_name
@@ -165,8 +165,8 @@ elif analysis_option == 'TS Diagram':
 
                     if add_regression == 'Yes':
                         # Perform linear regression
-                        X = TS_data['Temperature [ITS90,°C]']
-                        y = TS_data['Salinity [psu]']
+                        x = TS_data['Salinity [psu]']
+                        y = TS_data['Temperature [ITS90,°C]']
                         X = sm.add_constant(X)  # Add a constant term for the intercept
                         model = sm.OLS(y, X).fit()
                         X_pred = np.linspace(X['Temperature [ITS90,°C]'].min(), X['Temperature [ITS90,°C]'].max(), 100)
