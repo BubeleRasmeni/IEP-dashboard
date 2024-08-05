@@ -51,3 +51,4 @@ xarray==2024.6.0
 openpyxl
 statsmodels
 kaleido==0.2.1
+gsw
