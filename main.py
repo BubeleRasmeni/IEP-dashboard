@@ -11,6 +11,9 @@ pages = {
         st.Page("about.py", title="IEP Project"),],
     "Data Exploration":[
         st.Page("data_explorer.py", title="Data Visualisation")
+    ],
+     "Water Masses and MLD":[
+        st.Page("advanced_analysis.py", title="Water Mass Classification and MLD")
     ]
 }
 
