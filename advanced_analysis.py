@@ -8,7 +8,7 @@ import gsw
 pio.kaleido.scope.default_format = "svg"
 from functions import config_figure
 
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 
 # Functions for MLD and Water Mass Classification
 def calculate_mld(df, temp_col='Temperature [ITS90,°C]', depth_col='Depth [m]', threshold=0.5):
