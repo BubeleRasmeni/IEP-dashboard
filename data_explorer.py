@@ -73,7 +73,7 @@ if not filtered_data.empty:
 
     with col2:
         st.header(" ")
-        analysis_option = st.radio('Choose a Figure 👇', ['CTD Profiles', 'TS Diagram', 'Box Plot', 'Correlation Heatmap'])
+        analysis_option = st.radio('Choose a Figure 👇', ['CTD Profiles', 'Regression Diagram', 'Box Plot', 'Correlation Heatmap'])
         st.markdown("Scroll down to see " + analysis_option)
 
     if analysis_option == 'CTD Profiles':
@@ -110,8 +110,8 @@ if not filtered_data.empty:
         fig.update_yaxes(title_text="Depth [m]", autorange="reversed")
         st.plotly_chart(fig, use_container_width=True, config=config_figure)
 
-    elif analysis_option == 'TS Diagram':
-        st.header('TS Diagram')
+    elif analysis_option == 'Regression Diagram':
+        st.header('Regression Diagram')
         col1, col2, col3 = st.columns(3)
         with col1:
             selected_season = st.multiselect('Select Season(s)', filtered_data['season'].unique(), default=[filtered_data['season'].unique()[0]])
