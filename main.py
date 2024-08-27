@@ -1,19 +1,30 @@
 import streamlit as st
-################################################################
-# Page Setup
-apptitle = "IEP Analysis"
+import pandas as pd
+#page setup
+apptitle = "IEP Analysis 🌊"
 st.set_page_config(page_title=apptitle, page_icon="🌊", layout='wide')
-# Add an image to the sidebar
-#st.logo(r"C:\Users\brasmeni\Desktop\WORK\MIMS\IEP dashboard\images\science-vessel.jpg")
+# Load data once and store it in session state
+if 'data' not in st.session_state:
+    @st.cache_data
+    def load_data():
+        df = pd.read_excel('data/IEP_2017_2018.xlsx')
+        return df
+    
+    st.session_state.data = load_data()
+
 # Define the available pages
 pages = {
-    "Information":[
-        st.Page("about.py", title="IEP Project"),],
-    "Data Exploration":[
-        st.Page("data_explorer.py", title="Data Visualisation")
+    "Information": [
+        st.Page("about.py", title="📄 IEP Project"),
     ],
-     "Water Masses and MLD":[
-        st.Page("advanced_analysis.py", title="Water Mass Classification and MLD")
+    "Data Exploration": [
+        st.Page("data_explorer.py", title="📊 Data Visualization")
+    ],
+    "Water Masses": [
+        st.Page("watermasses.py", title="🌊 Water Mass Classification")
+    ],
+    "Mixed Layer Depth": [
+        st.Page("mld.py", title="📏 Mixed Layer Depth")
     ]
 }
 
