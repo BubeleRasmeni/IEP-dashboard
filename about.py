@@ -64,7 +64,7 @@ col0, col1, col2 = st.columns([1, 18, 1])  # 5%, 90%, 5%
 
 with col1:
     # Scatter map of sampling stations
-    fig_stations = px.scatter_mapbox(stations, lat='Lat (°S)', lon='Lon (°E)', hover_name='Grid', zoom=4.5, height=600)
+    fig_stations = px.scatter_mapbox(stations, lat='Lat (°S)', lon='Lon (°E)', hover_name='Grid', zoom=5, height=600)
     fig_stations.update_layout(mapbox_style="open-street-map", mapbox_center={"lat": -33.0, "lon": 20.0})
     # Update marker style with different colors
     fig_stations.update_traces(
