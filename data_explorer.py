@@ -12,7 +12,7 @@ import statsmodels.api as sm
 
 # Page layout
 st.markdown(
-    "<h1 style='text-align: center;'>Explore the data 📊 📉</h1>",
+    "<h1 style='text-align: left;'>Explore the data 📊 📉</h1>",
     unsafe_allow_html=True,
 )
 
