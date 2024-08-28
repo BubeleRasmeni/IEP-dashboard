@@ -82,7 +82,7 @@ config_figure = {
         'format': 'png',  # one of png, svg, jpeg, webp
         'filename': 'IEP_Figures',
         'height': 1000,
-        'width': 1500,
+        'width': 2500,
         'scale': 4  # Multiply title/legend/axis/canvas sizes by this factor
     }
 }
