@@ -247,6 +247,8 @@ else:
                 yaxis_title=y_var,
                 xaxis_title=x_var,
                 legend_title="Station, Season, Year",
+                width=600,  # Set the width of the scatter plot
+                height=520,
             )
 
             st.plotly_chart(fig_ts, config=config_figure)
