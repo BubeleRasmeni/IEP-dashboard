@@ -83,6 +83,6 @@ config_figure = {
         'filename': 'IEP_Figures',
         'height': 1500,
         'width': 3500,
-        'scale': 8  # Multiply title/legend/axis/canvas sizes by this factor
+        'scale': 4  # Multiply title/legend/axis/canvas sizes by this factor
     }
 }
