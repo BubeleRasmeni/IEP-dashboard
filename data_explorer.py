@@ -78,6 +78,7 @@ else:
                 hover_name="Grid",
                 zoom=4.5,
                 height=600,
+                width=700,
             )
             fig_map.update_layout(
                 mapbox_style="open-street-map",
