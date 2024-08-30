@@ -81,7 +81,7 @@ config_figure = {
     'toImageButtonOptions': {
         'format': 'png',  # one of png, svg, jpeg, webp
         'filename': 'IEP_Figures',
-        'height': 100,
+        'height': 1000,
         'width': 1000,
         'scale': 4  # Multiply title/legend/axis/canvas sizes by this factor
     }
