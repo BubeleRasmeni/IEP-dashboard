@@ -304,7 +304,8 @@ else:
                 showlegend=False,  # Ensure legend is displayed for stations
             )
 
-            st.plotly_chart(fig_wm)
+            st.plotly_chart(fig_wm, use_container_width=True, config=config_figure)
+
 
     else:
         st.warning(
