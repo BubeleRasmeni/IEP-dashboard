@@ -9,6 +9,10 @@ import gsw
 pio.kaleido.scope.default_format = "svg"
 from functions import config_figure
 
+from css import app_css  # Import CSS as a string
+
+st.markdown(app_css, unsafe_allow_html=True)
+
 # Page layout
 st.markdown(
     "<h1 style='text-align: center;'>Water Masses Classification 🌊</h1>",
@@ -304,8 +308,7 @@ else:
                 showlegend=False,  # Ensure legend is displayed for stations
             )
 
-            st.plotly_chart(fig_wm, use_container_width=True, config=config_figure)
-
+            st.plotly_chart(fig_wm)
 
     else:
         st.warning(
