@@ -6,13 +6,17 @@ from plotly.subplots import make_subplots
 import numpy as np
 import plotly.io as pio
 
-pio.kaleido.scope.default_format = "svg"
+pio.kaleido.scope.default_format = "png"
 from functions import generate_correlation_heatmap, config_figure
 import statsmodels.api as sm
 
+from css import app_css  # Import CSS as a string
+
+st.markdown(app_css, unsafe_allow_html=True)
+
 # Page layout
 st.markdown(
-    "<h1 style='text-align: left;'>Explore the data 📊 📉</h1>",
+    "<h1 style='text-align: center;'>Explore the data 📊 📉</h1>",
     unsafe_allow_html=True,
 )
 
@@ -78,14 +82,19 @@ else:
                 hover_name="Grid",
                 zoom=4.5,
                 height=600,
-                width=700,
             )
             fig_map.update_layout(
                 mapbox_style="open-street-map",
                 mapbox_center={"lat": -33.0, "lon": 17.0},
+                margin=dict(l=70, r=70, t=70, b=70),  # Increase margins
+                paper_bgcolor="white",  # Add a white background
+                plot_bgcolor="white",
+                autosize=False,
+                width=800,
+                height=600,
             )
             fig_map.update_traces(
-                marker=dict(size=6, symbol="circle", opacity=0.7, color="black")
+                marker=dict(size=6, symbol="circle", opacity=0.7, color="black"),
             )
             st.plotly_chart(fig_map, use_container_width=True, config=config_figure)
 
@@ -172,6 +181,26 @@ else:
             fig.update_xaxes(title_text=var_sal, row=1, col=2)
             fig.update_xaxes(title_text=var_oxy, row=1, col=3)
             fig.update_yaxes(title_text="Depth [m]", autorange="reversed")
+            fig.update_layout(
+                showlegend=True,  # Ensure legends are shown
+                margin=dict(
+                    l=70, r=200, t=50, b=50
+                ),  # Add margins and ensure enough space for legends
+                paper_bgcolor="white",  # Add a white background
+                plot_bgcolor="white",
+                autosize=False,
+                width=1200,  # Set the width of the scatter plot
+                height=600,
+            )
+            fig.update_layout(
+                legend=dict(
+                    orientation="h",  # Horizontal legend
+                    yanchor="bottom",
+                    y=-0.4,  # Adjust vertical position of legend
+                    xanchor="center",
+                    x=0.5,
+                )
+            )
             st.plotly_chart(fig, use_container_width=True, config=config_figure)
 
         elif analysis_option == "Regression Diagram":
@@ -180,13 +209,23 @@ else:
             with col1:
                 x_var = st.selectbox(
                     "Select X Variable",
-                    ["Salinity [psu]", "Temperature [ITS90,°C]", "Oxygen [ml/l]","Flourescence [mg/m^3]"],
+                    [
+                        "Salinity [psu]",
+                        "Temperature [ITS90,°C]",
+                        "Oxygen [ml/l]",
+                        "Flourescence [mg/m^3]",
+                    ],
                     index=0,
                 )
             with col2:
                 y_var = st.selectbox(
                     "Select Y Variable",
-                    ["Temperature [ITS90,°C]", "Salinity [psu]", "Oxygen [ml/l]","Flourescence [mg/m^3]"],
+                    [
+                        "Temperature [ITS90,°C]",
+                        "Salinity [psu]",
+                        "Oxygen [ml/l]",
+                        "Flourescence [mg/m^3]",
+                    ],
                     index=0,
                 )
 
@@ -247,16 +286,36 @@ else:
                 title=f"Regression Plot: {x_var} vs {y_var}",
                 yaxis_title=y_var,
                 xaxis_title=x_var,
-                legend_title="Station, Season, Year",
+                legend_title="Legend: Station, Season, Year",
+                margin=dict(l=70, r=200, t=50, b=50),  # Add margins
+                paper_bgcolor="white",  # Add a white background
+                plot_bgcolor="white",
+                showlegend=True,  # Ensure legends are shown
+                autosize=False,
+                width=1000,
+                height=600,
             )
-
-            st.plotly_chart(fig_ts, config=config_figure)
+            fig_ts.update_layout(
+                legend=dict(
+                    orientation="h",  # Horizontal legend
+                    yanchor="bottom",
+                    y=-0.3,  # Adjust vertical position of legend
+                    xanchor="center",
+                    x=0.5,
+                )
+            )
+            st.plotly_chart(fig_ts, use_container_width=True, config=config_figure)
 
         elif analysis_option == "Box Plot":
             st.header("Box Plot")
             variable = st.selectbox(
                 "Select Variable",
-                ["Temperature [ITS90,°C]", "Salinity [psu]", "Oxygen [ml/l]","Flourescence [mg/m^3]"],
+                [
+                    "Temperature [ITS90,°C]",
+                    "Salinity [psu]",
+                    "Oxygen [ml/l]",
+                    "Flourescence [mg/m^3]",
+                ],
                 index=0,
             )
             fig_stats = go.Figure()
@@ -268,7 +327,7 @@ else:
                             & (filtered_data["season"] == season)
                             & (filtered_data["datetime"].dt.year == year)
                         ]
-                        if not Stats_data.empty:  # Corrected this line
+                        if not Stats_data.empty:
                             fig_stats.add_trace(
                                 go.Box(
                                     y=Stats_data[variable],
@@ -282,9 +341,16 @@ else:
                 yaxis_title=variable,
                 legend_title="Station, Season, Year",
                 boxmode="group",
+                margin=dict(l=70, r=200, t=50, b=50),  # Add margins
+                paper_bgcolor="white",  # Add a white background
+                plot_bgcolor="white",
+                showlegend=True,  # Ensure legends are shown
+                autosize=False,
+                width=1000,
+                height=600,
             )
 
-            st.plotly_chart(fig_stats, config=config_figure)
+            st.plotly_chart(fig_stats, use_container_width=True, config=config_figure)
 
         elif analysis_option == "Correlation Heatmap":
             st.header("Correlation Heatmap")
@@ -294,6 +360,17 @@ else:
             st.write(" ")
             fig_corr = generate_correlation_heatmap(selected_station, data)
 
+            fig_corr.update_layout(
+                margin=dict(l=70, r=200, t=50, b=50),  # Add margins
+                paper_bgcolor="white",  # Add a white background
+                plot_bgcolor="white",
+                showlegend=True,  # Ensure legends are shown
+                autosize=False,
+                width=1000,
+                height=600,
+            )
+
             st.plotly_chart(fig_corr, config=config_figure)
+
     else:
         st.warning("Please select at least one grid to visualize the data.")
