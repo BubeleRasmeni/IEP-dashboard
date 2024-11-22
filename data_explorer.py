@@ -16,7 +16,17 @@ st.markdown(app_css, unsafe_allow_html=True)
 
 # Page layout
 st.markdown(
-    "<h1 style='text-align: center;'>Explore the data 📊 📉</h1>",
+    """
+    <h1 style='
+        text-align: center; 
+        color: #1a73e8; /* Google blue */
+        font-size: 2.5rem; /* Adjust the size */
+        font-weight: bold; 
+        margin-bottom: 1rem; /* Add spacing below */
+    '>
+        Explore the data 📊 📉
+    </h1>
+    """,
     unsafe_allow_html=True,
 )
 
