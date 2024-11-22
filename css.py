@@ -2,7 +2,7 @@ app_css = """
 <style>
 /* Background and header styling */
 .block-container {
-    padding: 2rem;
+    padding: 1rem;
     background-color: #f9f9f9;
 }
 [data-testid="stHeader"] { padding-top: 0.5rem; padding-bottom: 0.5rem; height: 0rem; background-color: #f0f2f6; }
