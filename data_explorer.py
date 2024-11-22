@@ -19,7 +19,7 @@ st.markdown(
     """
     <h1 style='
         text-align: center; 
-        color: #1a73e8; /* Google blue */
+        /* color: #1a73e8; Google blue */
         font-size: 1.5rem; /* Adjust the size */
         font-weight: bold; 
         margin-bottom: 1rem; /* Add spacing below */
