@@ -24,7 +24,7 @@ st.markdown(
         font-weight: bold; 
         margin-bottom: 1rem; /* Add spacing below */
     '>
-        Explore the data 📊 📉
+        Data Exploration 📊 📉
     </h1>
     """,
     unsafe_allow_html=True,
